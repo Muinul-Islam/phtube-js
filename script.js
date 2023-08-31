@@ -26,11 +26,12 @@ const loadCategory = async (categoryId) => {
 
   if (allCategory.length === 0) {
     const div = document.createElement('div');
-    noContentDiv.innerHTML = `
-    <img src="./img/icon.jpg"/>
+    div.innerHTML = `
+    <img class='w-[280px] h-[280px] mt-8' src="./img/icon.png"/>
+    <h3 class='mt-12 text-3xl'>Oops!! Sorry, There is no content here</h3>
     `;
     cardContainer.appendChild(div);
-    return
+    return;
   }
 
   allCategory?.forEach(category => {
