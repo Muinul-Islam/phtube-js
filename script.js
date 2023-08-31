@@ -30,14 +30,15 @@ const loadCategory = async (categoryId) => {
           <div class="card bg-base-100 shadow-xl">
           <figure><img class="h-[350px]" src="${category?.thumbnail}" alt="images" /></figure>
           <div class="card-body">
-           <div>
-            <img class="w-[64px] h-[64px] rounded-full" src="${category?.authors[0].profile_picture}" alt="images"/>
-            <p>If a dog chews shoes whose shoes does he choose?</p>
+           <div class="flex items-center gap-8">
+            <img class="w-[48px] h-[48px] rounded-full" src="${category?.authors[0]?.profile_picture}" alt="images"/>
+            <h3 class="text-xl font-semibold">${category?.title}</h3>
            </div>
-            
-            <div class="card-actions justify-end">
-              <button class="btn btn-primary">Buy Now</button>
+            <div class="flex w-9/12">
+            <p class="ml-20">${category?.authors[0].profile_name}</p>
+            <img src="./img/blueTick.jpg" alt="images"/>
             </div>
+            <p class="ml-20">${category?.others?.views} views</p>
           </div>
         </div>
     `;
