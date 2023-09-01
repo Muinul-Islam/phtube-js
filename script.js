@@ -24,17 +24,22 @@ const loadCategory = async (categoryId) => {
   const cardContainer = document.getElementById('card-container')
   cardContainer.innerHTML = '';
 
-  if (allCategory.length === 0) {
+  const noContentField = document.getElementById('no-content');
+  noContentField.innerHTML = '';
+
+  if (allCategory?.length === 0) {
     const div = document.createElement('div');
     div.innerHTML = `
-    <img class='w-[280px] h-[280px] mt-8' src="./img/icon.png"/>
-    <h3 class='mt-12 text-3xl'>Oops!! Sorry, There is no content here</h3>
+    <img class='w-[280px] h-[280px] ml-20 md:ml-24' src="./img/Icon.png"/>
+
+    <h3 class='my-12 text-3xl text-center'>Oops!! Sorry, There is no content here</h3>
     `;
-    cardContainer.appendChild(div);
+    noContentField.appendChild(div);
     return;
   }
 
   allCategory?.forEach(category => {
+    sortByView(category);
     const div = document.createElement('div');
     const timeSec = category?.others?.posted_date;
 
@@ -68,6 +73,11 @@ const loadCategory = async (categoryId) => {
 
     cardContainer.appendChild(div)
   });
+}
+
+
+const sortByView = (category) => {
+
 }
 
 
