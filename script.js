@@ -19,9 +19,10 @@ const loadData = async () => {
 
 const loadCategory = async (categoryId) => {
   const res = await fetch(`https://openapi.programming-hero.com/api/videos/category/${categoryId}`);
+  sortByView(categoryId);
   const data = await res.json();
   const allCategory = data?.data;
-  const cardContainer = document.getElementById('card-container')
+  const cardContainer = document.getElementById('card-container');
   cardContainer.innerHTML = '';
 
   const noContentField = document.getElementById('no-content');
@@ -39,7 +40,6 @@ const loadCategory = async (categoryId) => {
   }
 
   allCategory?.forEach(category => {
-    sortByView(category);
     const div = document.createElement('div');
     const timeSec = category?.others?.posted_date;
 
@@ -76,7 +76,11 @@ const loadCategory = async (categoryId) => {
 }
 
 
-const sortByView = (category) => {
+const sortByView = async (categoryId) => {
+  const res = await fetch(`https://openapi.programming-hero.com/api/videos/category/${categoryId}`);
+  const data = await res.json();
+  const views = data.data;
+  console.log(views);
 
 }
 
