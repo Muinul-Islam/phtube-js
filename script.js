@@ -19,7 +19,6 @@ const loadData = async () => {
 
 const loadCategory = async (categoryId) => {
   const res = await fetch(`https://openapi.programming-hero.com/api/videos/category/${categoryId}`);
-  sortByView(categoryId);
   const data = await res.json();
   const allCategory = data?.data;
   const cardContainer = document.getElementById('card-container');
@@ -79,9 +78,15 @@ const loadCategory = async (categoryId) => {
 const sortByView = async (categoryId) => {
   const res = await fetch(`https://openapi.programming-hero.com/api/videos/category/${categoryId}`);
   const data = await res.json();
-  const views = data.data;
-  console.log(views);
-
+  const allCategory = data?.data;
+  console.log(allCategory);
+  allCategory?.forEach(category => {
+    const viewsData = category?.others?.views;
+    const viewsDataFloat = parseFloat(viewsData);
+    const viewsDataForSort = viewsDataFloat * 1000;
+    category.viewsDataForSort = viewsDataForSort;
+  });
+  allCategory.sort((a, b) => b.viewsDataForSort - a.viewsDataForSort);
 }
 
 
