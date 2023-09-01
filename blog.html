@@ -9,23 +9,68 @@
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body>
-  <div class="my-5 ml-5">
-    <h1 class="text-3xl font-semibold">Discussing About The Scope Of VAR , LET And CONST:</h1>
-    <p><span>Var:</span></p>
-    <p><span>Let:</span></p>
-    <p><span>Const:</span></p>
+<body class="mx-8">
+  <div class="my-8 ml-5">
+    <h1 class="text-4xl font-semibold my-5">Discussing About The Scope Of VAR , LET And CONST:</h1>
+    <p class="text-xl my-4"><span class="font-bold">VAR: </span>var is a javascript variable used to declare
+      variables. var is
+      the short form of Variable. it is create with the var keyword and the assignment operator (=) is used to assign
+      value to that variable. <br> For an example: var x = 5;<br> But var has some limitations. It is function scoped
+      that
+      means if a var is declared inside a function then it can be accessible only inside the function. But if it is
+      declared outside of the function then it become global scoped. It can be re-declared.</p>
+    <p class="text-xl my-4"><span class="font-bold">LET: </span>let is a javascript variable used to declare
+      variables. It is a block scope variable. That means it is only accessible within the function , loop or any other
+      block that it was declared. let was first introduced in ECMAScript 2015 which is also known as ES6. It provides
+      more comfortable way to declare variable compared to var. <br> For an example: let x = 10; <br> It can not be
+      re-declared.
+      It is more convenient to use let then var.
+    </p>
+    <p class="text-xl my-4"><span class="font-bold">Const: </span>const is a javascript variable used to declare
+      variables in block scope. Variable declared with const means it is constant that means the value of the declared
+      variable can not be changed. It is also introduced in ECMAScript 2015. Variables which are declared using const
+      are immutable which means the values can not be changed once they are declared. <br>
+      For an example: const x = 15; <br>
+      It also can not be re-declared. It also can not be accessible outside of function , loop or any kind of block.
+    </p>
   </div>
 
   <div class="my-5 ml-5">
-    <h1 class="text-3xl font-semibold">Use Cases Of NULL And Undefined:</h1>
-    <p><span>Null:</span></p>
-    <p><span>Undefined:</span></p>
+    <h1 class="text-4xl font-semibold mb-3">Use Cases Of NULL And Undefined:</h1>
+    <div class="text-xl">
+      <p><span class="font-bold">Null: </span></p>
+      <p>1. Indicate The Value Null: If there is no value for any variable one can declare the value null of
+        the variable intentionally. Example: let array = null;</p>
+      <p>2. Clear Object Properties: After set some property to an object It can be cleared by using null.
+      </p>
+      <p>As A Placeholder: It can be used as a placeholder when working with data structures or arrays to reserve a
+        place for a value.</p>
+    </div>
+
+    <div class="text-xl">
+      <p class="mb-3 mt-3 font-bold"><span>Undefined:</span></p>
+      <p>1. Variable Declaration Without Initialization: If variable is declared but no value is assigned thed it will
+        give
+        undefined.</p>
+      <p>2. Function Parameters: If a function called with more then one arguments but it is provided one parameters
+        then
+        it will show undefined.</p>
+      <p>3. Object Properties: If we want to console a property that is not available in the object then it will show
+        undefined.</p>
+      <p>4. Return Value: If there is no return statement in the function then it will show undefined.</p>
+    </div>
   </div>
 
   <div class="my-5 ml-5">
-    <h1 class="text-3xl font-semibold">REST API:</h1>
-    <p></p>
+    <h1 class="text-4xl font-semibold">REST API:</h1>
+    <div class="text-xl my-3">
+      <p>REST stands for Representational State Transfer which is an architectural style that defines a set of
+        constraints to be used for creating web services. API stands for Application Programming Interface. REST API is
+        a way of accessing web services in a simple and flexible way without having any processing. REST technology is
+        generally preferred to the more robust Simple Object Access Protocol technology because REST uses less
+        bandwidth. Its used to fetch or give some information from a web service. All communication done via REST API
+        uses only HTTP request.</p>
+    </div>
   </div>
 </body>
 
